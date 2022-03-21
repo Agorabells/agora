@@ -30,7 +30,7 @@ export default function Login() {
 
 export const getServerSideProps = withSession(({ req, res }) => {
 	if (req?.session?.user) {
-		res.setHeader('location', '/');
+		res.setHeader('location', '/profile');
 		res.statusCode = 302;
 		res.end();
 	}
