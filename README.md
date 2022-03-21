@@ -1,2 +1,2 @@
 # Ubec
-Decenralized Social NFT Monetization
+Decentralized Social NFT Monetization
