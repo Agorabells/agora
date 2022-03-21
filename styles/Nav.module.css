@@ -1,0 +1,15 @@
+.nav {
+	border-bottom: 1px solid #ececec;
+	margin: 10px 0;
+}
+
+.nav ul li {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 20px 0 0;
+	cursor: pointer;
+}
+
+.nav ul li:hover {
+	color: #555cec;
+}
