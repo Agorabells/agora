@@ -1,0 +1,46 @@
+.publication {
+	border: 1px solid #ececec;
+	border-radius: 10px;
+	padding: 20px;
+	min-height: 200px;
+	margin: 10px 0;
+	position: relative;
+}
+
+.profile {
+	margin: 10px 0;
+}
+
+.profile div {
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 10px 0 0;
+}
+
+.profile span {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.publication h1 {
+	font-size: 20px;
+}
+
+.created {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	color: grey;
+}
+
+.type {
+	text-transform: uppercase;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: grey;
+}
