@@ -1,12 +1,11 @@
 import nc from 'next-connect';
 import sessionMiddleware from '../../../lib/session.module';
 
-
 const handler = nc();
 
 handler.use(sessionMiddleware);
 
-handler.post( async (req, res) => {
+handler.post(async (req, res) => {
 	try {
 		req.session.user = { ...req?.session?.user, ...req.body };
 		await req.session.commit();
