@@ -14,7 +14,7 @@ export default function Feeds({ publications }) {
 				{ item.profile?.picture?.original?.url ? (
 					<>
 						<div>
-							<Image src={item.profile?.picture?.original?.url} width={80} height={80} />
+							<img src={item.profile?.picture?.original?.url} width={80} height={80} />
 						</div>
 						<span><strong>{ item?.profile?.name ? item.profile.name : 'unknown' }</strong> - ({ item?.profile?.ownedBy})</span>
 					</>
