@@ -1,9 +1,7 @@
 import Nav from './Nav';
 
-const Header = () => {
-	return (
-		<Nav />
-	)
+function Header() {
+	return <Nav />;
 }
 
 export default Header;

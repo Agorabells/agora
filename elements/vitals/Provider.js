@@ -5,7 +5,7 @@ import { useUser } from '../../lib/hooks';
 export const DataContext = createContext();
 
 export default function Provider({ children }) {
-	const [ user, setUser ] = useState(null);
+	const [user, setUser] = useState(null);
 
 	const { data, error } = useUser();
 
@@ -13,11 +13,7 @@ export default function Provider({ children }) {
 		if (!data) return;
 		if (error) throw error;
 		setUser(data);
-	}, [data])
+	}, [data]);
 
-	return (
-		<DataContext.Provider value={{user, setUser}}>
-			{ children }
-		</DataContext.Provider>
-	);
+	return <DataContext.Provider value={{ user, setUser }}>{children}</DataContext.Provider>;
 }
