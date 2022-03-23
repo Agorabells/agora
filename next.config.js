@@ -4,6 +4,6 @@ const nextConfig = {
 	images: {
 		domains: ['ipfs.infura.io', 'lh3.googleusercontent.com'],
 	},
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

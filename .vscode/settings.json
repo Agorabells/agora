@@ -1,0 +1,10 @@
+{
+	"editor.formatOnSave": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.endOfLine": "auto",
+	"editor.quoteProps": "consistent",
+	"prettier.semi": false,
+	"prettier.singleQuote": true,
+	"prettier.trailingComma": "none",
+	"html.format.preserveNewLines": false
+}
