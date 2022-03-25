@@ -1,14 +1,18 @@
 import Router from 'next/router';
 import { getSigner, getSignerAddress } from '../lib/ethers.module';
 import { withSession } from '../lib/server/withSession';
+import { loginAuthenticate } from '../lib/lens-api/login-authenticate';
 
 export default function Login() {
 	const onClick = async () => {
 		await getSigner();
+		const accessToken = await loginAuthenticate();
+		console.log(accessToken);
 		const payload = {
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
 				address: await getSignerAddress(),
+				accessToken,
 			}),
 			method: 'POST',
 		};

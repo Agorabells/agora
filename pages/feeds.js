@@ -43,7 +43,8 @@ export const getServerSideProps = withSession(async ({ req, res }) => {
 		res.statusCode = 302;
 		res.end();
 	}
-	const { explorePublications } = await explore();
+
+	const { explorePublications } = await explore(req);
 	return {
 		props: {
 			publications: explorePublications,
