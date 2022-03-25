@@ -4,8 +4,8 @@ import { createProfile } from '../lib/lens-api/create-profile';
 
 export default function Profile({ user }) {
 	const createNewProfile = async () => {
-		const accessTokens = await loginAuthenticate(user?.address);
-		console.log(`accessTokens${accessTokens.authenticate.accessToken}`);
+		// const accessTokens = await loginAuthenticate(user?.address);
+		// console.log(`accessTokens${accessTokens.authenticate.accessToken}`);
 		const res = await createProfile(accessTokens.authenticate.accessToken);
 		console.log('res');
 		console.log(res);
@@ -27,6 +27,7 @@ export const getServerSideProps = withSession(({ req, res }) => {
 	return {
 		props: {
 			user: req?.session?.user,
+			accessToken: req?.session?.accessToken,
 		},
 	};
 });
