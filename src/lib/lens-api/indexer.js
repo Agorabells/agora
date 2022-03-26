@@ -1,4 +1,4 @@
-import hasTxBeenIndexed from '../gql/indexer-request';
+import hasTxBeenIndexed from '../gql/indexer';
 
 export const indexer = async (txHash, token) => {
 	while (true) {

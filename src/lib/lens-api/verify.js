@@ -1,9 +1,6 @@
-import explorePublicationsRequest from '../gql/explore-publications-request';
-import { withSession } from '../server/withSession';
+import explorePublicationsRequest from '../gql/explore-publications';
 
 export const verify = async (accessToken) => {
-	const sreq = withSession();
-	console.log(sreq.withSession);
 	const result = await explorePublicationsRequest({
 		// switch for `TOP_COLLECTED` if you wanted collected!
 		sortCriteria: 'TOP_COMMENTED',

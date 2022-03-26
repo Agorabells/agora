@@ -8,6 +8,9 @@ export async function getProvider() {
 		return provider;
 	}
 }
+// export function getProvider() {
+// 	return new ethers.providers.JsonRpcProvider('https://rpc-mumbai.matic.today');
+// }
 
 export async function getSigner() {
 	const provider = await getProvider();

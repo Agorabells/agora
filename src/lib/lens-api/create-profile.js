@@ -1,6 +1,6 @@
 import { BigNumber, utils } from 'ethers';
 import { indexer } from './indexer';
-import createProfileRequest from '../gql/create-profile-request';
+import createProfileRequest from '../gql/create-profile';
 
 export const createProfile = async (accessToken) => {
 	const profileInfo = {
