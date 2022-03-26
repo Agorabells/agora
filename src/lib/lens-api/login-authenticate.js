@@ -1,6 +1,6 @@
 import { signText, getSignerAddress } from '../ethers.module';
-import generateChallenge from './gql/generate-challenge';
-import authenticate from './gql/authenticate';
+import generateChallenge from '../gql/generate-challenge';
+import authenticate from '../gql/authenticate';
 
 export const loginAuthenticate = async () => {
 	const address = await getSignerAddress();

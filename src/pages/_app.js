@@ -1,6 +1,6 @@
 import '../styles/globals.css';
-import Provider from '../elements/vitals/Provider';
-import Header from '../elements/vitals/Header';
+import Provider from '../components/vitals/Provider';
+import Header from '../components/vitals/Header';
 
 function MyApp({ Component, pageProps }) {
 	return (

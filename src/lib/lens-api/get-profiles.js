@@ -1,4 +1,4 @@
-import getProfilesRequest from './gql/get-profiles-request';
+import getProfilesRequest from '../gql/get-profiles-request';
 
 export const getProfiles = async (type, resQuery) => {
 	let request;

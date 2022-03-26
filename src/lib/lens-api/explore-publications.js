@@ -1,7 +1,6 @@
-import explorePublicationsRequest from './gql/explore-publications-request';
+import explorePublicationsRequest from '../gql/explore-publications-request';
 
 export const explore = async (req) => {
-	console.log(req.session);
 	const result = await explorePublicationsRequest({
 		// switch for `TOP_COLLECTED` if you wanted collected!
 		sortCriteria: 'TOP_COMMENTED',
