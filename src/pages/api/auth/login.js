@@ -35,7 +35,7 @@ handler.post(async (req, res) => {
 
 		await req.session.commit();
 		res.status(200).json({ success: true, address });
-	} catch (e) {
+	} catch (error) {
 		console.log(error);
 		res.status(400).json({ error });
 	}
