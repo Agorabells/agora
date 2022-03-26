@@ -1,15 +1,14 @@
+import Router from 'next/router';
 import { withSession } from '../lib/server/withSession';
-import { createProfile } from '../lib/lens-api/create-profile';
 
 export default function Profile({ user }) {
-	const { accessToken, profile } = user;
+	const { profile, accessToken } = user;
 
-	const createNewProfile = async () => {
-		const res = await createProfile(accessToken);
+	const editProfile = async () => {
+		if (profile?.handle) {
+			Router.push('/update-profile');
+		}
 	};
-	// const editProfile = async () => {
-	// 	const res = await editProfile(accessToken);
-	// };
 	if (profile) {
 		return (
 			<div>
@@ -19,20 +18,30 @@ export default function Profile({ user }) {
 				<h4>profileIDs: {profile?.id}</h4>
 				<h4>bio: {profile?.bio}</h4>
 				<h4>coverPicture: {profile?.coverPicture}</h4>
-				<h4>location: {profile?.coverPicture}</h4>
+				<h4>location: {profile?.location}</h4>
 				<h4>twitterUrl: {profile?.twitterUrl}</h4>
 				<h4>website: {profile?.website}</h4>
 				<h4>accessToken: {accessToken}</h4>
 				<img
+					className="w-10 h-10 rounded-full mr-4"
 					src={
 						profile.profilePictureUri
 							? profile.profilePictureUri
 							: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png'
 					}
-					alt=""
+					alt={profile?.name}
 				/>
 
-				<button onClick={() => createNewProfile()}>Edit Profile</button>
+				<button
+					className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+					onClick={(e) => {
+						e.preventDefault();
+
+						editProfile();
+					}}
+				>
+					Edit Profile
+				</button>
 			</div>
 		);
 	}

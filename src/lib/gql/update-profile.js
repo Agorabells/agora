@@ -11,7 +11,7 @@ const UPDATE_PROFILE = `
  }
 `;
 
-export const updateProfileRequest = (profileInfoQuery, accessToken) => {
+const updateProfileRequest = (profileInfoQuery, accessToken) => {
 	return apolloClient(accessToken).mutate({
 		mutation: gql(UPDATE_PROFILE),
 		variables: {

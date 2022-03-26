@@ -1,4 +1,4 @@
-import explorePublicationsRequest from '../gql/explore-publications-request';
+import explorePublicationsRequest from '../gql/explore-publications';
 
 export const explore = async (req) => {
 	const result = await explorePublicationsRequest({
