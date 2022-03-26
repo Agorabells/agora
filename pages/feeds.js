@@ -4,7 +4,6 @@ import { withSession } from '../lib/server/withSession';
 import { explore } from '../lib/lens-api/explore-publications';
 
 export default function Feeds({ publications }) {
-	console.log(publications);
 	return (
 		<div>
 			<h1>Feeds</h1>

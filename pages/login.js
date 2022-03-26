@@ -5,9 +5,10 @@ import { loginAuthenticate } from '../lib/lens-api/login-authenticate';
 
 export default function Login() {
 	const onClick = async () => {
+		// connect metamask
 		await getSigner();
+		// authenticate and get accessToken
 		const accessToken = await loginAuthenticate();
-		console.log(accessToken);
 		const payload = {
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
