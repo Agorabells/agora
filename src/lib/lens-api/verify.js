@@ -1,4 +1,4 @@
-import explorePublicationsRequest from './gql/explore-publications-request';
+import explorePublicationsRequest from '../gql/explore-publications-request';
 import { withSession } from '../server/withSession';
 
 export const verify = async (accessToken) => {
