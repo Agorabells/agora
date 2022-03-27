@@ -6,7 +6,7 @@ import { explore } from '../lib/lens-api/explore-publications';
 export default function Feeds({ publications }) {
 	return (
 		<div>
-			<h1>Feeds</h1>
+			<h1>Feed</h1>
 			{publications.items.map((item) => (
 				<div className={style.publication} key={item.id}>
 					<div className={style.profile}>

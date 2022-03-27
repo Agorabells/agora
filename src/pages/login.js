@@ -26,8 +26,13 @@ export default function Login() {
 
 	return (
 		<div>
-			<h1>Login</h1>
-			<button onClick={() => onClick()}>Connect</button>
+			<h1 className="py-2 font-bold">Welcome to Agora </h1>
+			<button
+				className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+				onClick={() => onClick()}
+			>
+				Connect Wallet
+			</button>
 		</div>
 	);
 }
