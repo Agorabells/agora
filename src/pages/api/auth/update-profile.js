@@ -28,7 +28,6 @@ handler.post(async (req, res) => {
 		};
 
 		// ? update  profile info
-		console.log(' update  profile info');
 
 		const updateProfileResult = await updateProfile(profileInfo, accessToken);
 		if (updateProfileResult.data) {

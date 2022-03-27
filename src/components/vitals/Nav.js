@@ -21,6 +21,11 @@ function Nav() {
 						<Link href="/feeds">Feeds</Link>
 					</li>
 				) : null}
+				{user ? (
+					<li>
+						<Link href="/create-post">Add post</Link>
+					</li>
+				) : null}
 				{!user ? (
 					<li>
 						<Link href="/login">Login</Link>
