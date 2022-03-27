@@ -6,22 +6,35 @@ export default function PostNFT({ post }) {
 	console.log(post);
 	const { publication } = post;
 	const { profile, metadata, stats, __typename } = publication;
-	const { handle } = profile;
-	const { totalFollowers, totalFollowing, totalPosts, totalComments } = stats;
+	const { handle, id, ownedBy } = profile;
+	const { totalFollowers, totalFollowing, totalPosts, totalAmountOfComments } =
+		stats;
+	const { content, description } = metadata;
 	return (
 		<div>
 			<h1>Post NFT</h1>
 			<div>{publication.id}</div>
-			<div>{publication.id}</div>
+			<div>{__typename}</div>
 			<div>
 				{profile.id} {profile.name}
 				{handle}
 			</div>
-			{/* <div>{profile.id}</div> */}
-			{/* <div>{profile.bio}</div>
-			<div>{profile.ownedBy}</div>
-			<div>{profile.location}</div>
-			<div>{profile.handle}</div> */}
+			<div>total comments {totalAmountOfComments}</div>
+			<div>{content}</div>
+			<div>{description}</div>
+			<div>{ownedBy}</div>
+			<a href={`/profiles/${profile.id}/`}>
+				<img
+					src={
+						profile.picture && profile.picture.original.url
+							? profile.picture.original.url
+							: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png'
+					}
+					width={80}
+					height={80}
+					alt={profile?.name ? profile.name : 'unknown'}
+				/>
+			</a>
 		</div>
 	);
 }
