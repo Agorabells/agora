@@ -289,7 +289,7 @@ const GET_PUBLICATION = `
   }
 `;
 
-export const getPublicationRequest = (publicationId) => {
+const getPublicationRequest = (publicationId) => {
 	return apolloClient().query({
 		query: gql(GET_PUBLICATION),
 		variables: {
@@ -299,5 +299,4 @@ export const getPublicationRequest = (publicationId) => {
 		},
 	});
 };
-
 export default getPublicationRequest;

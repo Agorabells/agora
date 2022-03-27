@@ -31,15 +31,19 @@ export default function Feeds({ publications }) {
 							<strong>{item?.profile?.name ? item.profile.name : 'unknown'}</strong> -
 							({item?.profile?.ownedBy})
 						</span>{' '}
+						<strong>{item?.profile?.handle}</strong>
 					</a>
 				</div>
 				<h1>{item.metadata.content}</h1>
 				<h4>{item.metadata.content}</h4>
 				<span className={style.type}>{item.__typename}</span>
 				{/* <span className={style.created}>Created: {item.createdAt}</span> */}
-				<span className={style.created}>
-					comments : {item.stats.totalAmountOfComments}
-				</span>
+
+				<a href={`/post-nft/${item.id}/`}>
+					<span className={style.created}>
+						comments : {item.stats.totalAmountOfComments}
+					</span>
+				</a>
 			</div>
 		);
 	}
