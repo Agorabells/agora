@@ -18,7 +18,7 @@ function Nav() {
 				) : null}
 				{user ? (
 					<li>
-						<Link href="/feeds">Feeds</Link>
+						<Link href="/feeds">Feed</Link>
 					</li>
 				) : null}
 				{!user ? (

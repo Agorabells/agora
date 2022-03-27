@@ -39,15 +39,14 @@ export default function UpdateProfile({ user }) {
 			<div className="w-full max-w-s">
 				<form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 					<div className="block text-gray-700  font-bold mb-8">Profile Update</div>
-					<label className="block text-gray-700 text-sm font-bold mb-2">address: {user?.address}</label>
-					<label className="block text-gray-700 text-sm font-bold mb-2">profileID: {profile?.id} </label>
 
-					<label className="block text-gray-700 text-sm font-bold mb-2">handle: {handle} </label>
-
+					<label className="block text-gray-700 text-sm font-bold mb-2">Address: {user?.address}</label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">ID: {profile?.id} </label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">Handle: {handle} </label>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">name: </label>
+					<label className="block text-gray-700 text-sm font-bold ">Name: </label>
 					<input
-						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
 						id="name"
 						name="name"
@@ -57,9 +56,9 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">bio: </label>
+					<label className="block text-gray-700 text-sm font-bold ">Bio: </label>
 					<input
-						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
 						id="bio"
 						name="bio"
@@ -69,9 +68,9 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">coverPicture: </label>
+					<label className="block text-gray-700 text-sm font-bold ">Cover picture: </label>
 					<input
-						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
 						disabled
 						id="coverPicture"
@@ -82,9 +81,9 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">location: </label>
+					<label className="block text-gray-700 text-sm font-bold ">Location: </label>
 					<input
-						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
 						id="location"
 						name="location"
@@ -94,9 +93,9 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">twitterUrl: </label>
+					<label className="block text-gray-700 text-sm font-bold ">Twitter url: </label>
 					<input
-						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
 						id="twitterUrl"
 						name="twitterUrl"
@@ -106,9 +105,10 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">website: </label>
+					<label className="block text-gray-700 text-sm font-bold ">Website: </label>
 					<input
-						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4
+"
 						type="text"
 						id="website"
 						name="website"
@@ -129,7 +129,7 @@ export default function UpdateProfile({ user }) {
 					/>
 					<label className="block text-gray-700 text-sm font-bold mb-2">Profile Image: </label>
 					<input
-						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
 						id="profilePictureUri"
 						name="profilepicture"
@@ -140,7 +140,6 @@ export default function UpdateProfile({ user }) {
 					/>
 					<br />
 					<br />
-
 					<button
 						className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 						onClick={(e) => {
