@@ -12,29 +12,30 @@ export default function PostNFT({ post }) {
 	const { content, description } = metadata;
 	return (
 		<div>
-			<h1>Post NFT</h1>
-			<div>{publication.id}</div>
-			<div>{__typename}</div>
-			<div>
-				{profile.id} {profile.name}
-				{handle}
+			<h1 className="font-bold mb-4">Post NFT</h1>
+			<div className="flex">
+				<div className="mb-6">
+					<a href={`/profiles/${profile.id}/`}>
+						<img
+							className="overflow-hidden rounded-full mr-4 w-20 h-20"
+							src={
+								profile.picture && profile.picture.original.url
+									? profile.picture.original.url
+									: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png'
+							}
+							width={80}
+							height={80}
+							alt={profile?.name ? profile.name : 'unknown'}
+						/>
+					</a>
+				</div>
+				<div className="font-semibold tracking-wide mr-2">
+					{profile.name}
+					<span className="italic font-light ml-2">({handle})</span>
+					<div className="text-xs">COMMENTS: {totalAmountOfComments}</div>
+				</div>
 			</div>
-			<div>total comments {totalAmountOfComments}</div>
-			<div>{content}</div>
-			<div>{description}</div>
-			<div>{ownedBy}</div>
-			<a href={`/profiles/${profile.id}/`}>
-				<img
-					src={
-						profile.picture && profile.picture.original.url
-							? profile.picture.original.url
-							: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png'
-					}
-					width={80}
-					height={80}
-					alt={profile?.name ? profile.name : 'unknown'}
-				/>
-			</a>
+			<div className="line-clamp-3">{content}</div>
 		</div>
 	);
 }

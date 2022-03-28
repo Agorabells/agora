@@ -11,10 +11,11 @@ export default function Feeds({ publications }) {
 
 		return (
 			<div className={style.publication} key={item.id}>
-				<div className={style.profile}>
-					<div>
+				<div className="flex">
+					<div className="mb-6">
 						<a href={`/profiles/${item.profile.id}/`}>
 							<img
+								className="overflow-hidden rounded-full mr-4 w-20 h-20"
 								src={
 									item.profile.picture && item.profile.picture.original.url
 										? item.profile.picture.original.url
@@ -27,15 +28,18 @@ export default function Feeds({ publications }) {
 						</a>
 					</div>
 					<a href={`/profiles/${item.profile.id}/`}>
-						<span>
-							<strong>{item?.profile?.name ? item.profile.name : 'unknown'}</strong> -
-							({item?.profile?.ownedBy})
-						</span>{' '}
-						<strong>{item?.profile?.handle}</strong>
+						<div className="hover:text-accent-200 ease-in-out duration-150 font-semibold tracking-wide mr-2">
+							{item?.profile?.name ? item.profile.name : 'unknown'}
+							<span className="italic font-light ml-2">
+								({item?.profile?.handle}){' '}
+							</span>
+						</div>
+						<div>{item?.profile?.ownedBy}</div>
 					</a>
 				</div>
-				<h1>{item.metadata.content}</h1>
-				<h4>{item.metadata.content}</h4>
+				<h4 className="text-md leading-6 line-clamp-3 mb-6">
+					{item.metadata.content}
+				</h4>
 				<span className={style.type}>{item.__typename}</span>
 				{/* <span className={style.created}>Created: {item.createdAt}</span> */}
 
@@ -50,11 +54,13 @@ export default function Feeds({ publications }) {
 
 	return (
 		<div>
-			<h1>Feed</h1>
-			{publications.map((item, ind) => (
-				// eslint-disable-next-line react/no-array-index-key
-				<PublicationItem item={item} key={ind} />
-			))}
+			<h1 className="font-bold">Feed</h1>
+			<div className="grid grid-cols-2 gap-6">
+				{publications.map((item, ind) => (
+					// eslint-disable-next-line react/no-array-index-key
+					<PublicationItem item={item} key={ind} />
+				))}
+			</div>
 		</div>
 	);
 }

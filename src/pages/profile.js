@@ -42,13 +42,11 @@ export default function Profile({ user }) {
 							alt="avatar"
 						/>
 						<div>
-							<h1 className="font-semibold tracking-wide">{user?.address}</h1>
-							<div>
-								<span>ID:</span> {profile?.id}
-							</div>
-							<div>
-								<span>Handle:</span> {profile?.handle}
-							</div>
+							<h1 className="font-semibold tracking-wide">
+								{profile?.handle} <span>{profile?.name}</span>
+							</h1>
+							<div>{user?.address}</div>
+							<div>{profile?.bio}</div>
 						</div>
 					</div>
 				</div>
