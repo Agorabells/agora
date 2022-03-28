@@ -15,16 +15,15 @@ function Nav() {
 					<li className="hover:text-accent-200 ease-in-out duration-150 font-bold mr-4 -ml-2 px-2 py-1 rounded-md">
 						<Link href="/">Home</Link>
 					</li>
+					<li className="hover:text-accent-200 ease-in-out duration-150 font-bold mr-4 px-2 py-1 rounded-md">
+						<Link href="/feeds">Feed</Link>
+					</li>
 					{user ? (
 						<li className="hover:text-accent-200 ease-in-out duration-150 font-bold mr-4 px-2 py-1 rounded-md">
 							<Link href="/profile">Profile</Link>
 						</li>
 					) : null}
-					{user ? (
-						<li className="hover:text-accent-200 ease-in-out duration-150 font-bold mr-4 px-2 py-1 rounded-md">
-							<Link href="/feeds">Feed</Link>
-						</li>
-					) : null}
+
 					{!user ? (
 						<li className="hover:text-accent-200 ease-in-out duration-150 font-bold mr-4 px-2 py-1 rounded-md">
 							<Link href="/login">Login</Link>

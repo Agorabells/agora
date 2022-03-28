@@ -1,8 +1,14 @@
 import Link from 'next/link';
+import Head from 'next/head';
 
 export default function Home() {
 	return (
 		<div className="flex w-3/4 mx-auto h-screen items-center justify-center text-center">
+			<Head>
+				<title>
+					Agora - Decentralized embeddable comments widget built on Lens Protocol
+				</title>
+			</Head>
 			<div>
 				<h1 className="text-5xl font-bold mb-6 -mt-72 leading-10">
 					Welcome to AGORA

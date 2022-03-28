@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import Router from 'next/router';
+import Head from 'next/head';
 import { withSession } from '../lib/server/withSession';
 
 export default function UpdateProfile({ user }) {
@@ -12,9 +13,7 @@ export default function UpdateProfile({ user }) {
 	const [website, setWebsite] = useState(profile?.website || '');
 	const [twitterUrl, setTwitterUrl] = useState(profile?.twitterUrl || '');
 	const [location, setLocation] = useState(profile?.location || '');
-	const [profilePictureUri, setProfilePictureUri] = useState(
-		profile?.profilePictureUri || '',
-	);
+	const [profilePictureUri, setProfilePictureUri] = useState(profile?.profilePictureUri || '');
 
 	const UpdateProfileInfo = async () => {
 		const profileInfo = {
@@ -39,22 +38,17 @@ export default function UpdateProfile({ user }) {
 	if (profile) {
 		return (
 			<div className="w-full">
+				<Head>
+					<title>{profile?.handle} edit profile - Agora</title>
+				</Head>
 				<form className="">
 					<div className="block text-gray-700  font-bold mb-8">Edit Profile</div>
 
-					<label className="block text-gray-700 text-sm font-bold mb-2">
-						Address: {user?.address}
-					</label>
-					<label className="block text-gray-700 text-sm font-bold mb-2">
-						ID: {profile?.id}{' '}
-					</label>
-					<label className="block text-gray-700 text-sm font-bold mb-2">
-						Handle: {handle}{' '}
-					</label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">Address: {user?.address}</label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">ID: {profile?.id} </label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">Handle: {handle} </label>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">
-						Name:{' '}
-					</label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">Name: </label>
 					<input
 						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
@@ -78,9 +72,7 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">
-						Location:{' '}
-					</label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">Location: </label>
 					<input
 						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
@@ -92,9 +84,7 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">
-						Twitter url:{' '}
-					</label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">Twitter url: </label>
 					<input
 						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
@@ -106,9 +96,7 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold mb-2">
-						Website:{' '}
-					</label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">Website: </label>
 					<input
 						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4
 "

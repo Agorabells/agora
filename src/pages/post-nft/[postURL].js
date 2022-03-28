@@ -1,4 +1,5 @@
 /* eslint-disable import/no-unresolved */
+import Head from 'next/head';
 import { withSession } from '../../lib/server/withSession';
 import { getPublication } from '../../lib/lens-api/get-publication';
 
@@ -7,11 +8,13 @@ export default function PostNFT({ post }) {
 	const { publication } = post;
 	const { profile, metadata, stats, __typename } = publication;
 	const { handle, id, ownedBy } = profile;
-	const { totalFollowers, totalFollowing, totalPosts, totalAmountOfComments } =
-		stats;
+	const { totalFollowers, totalFollowing, totalPosts, totalAmountOfComments } = stats;
 	const { content, description } = metadata;
 	return (
 		<div>
+			<Head>
+				<title>{description} publication - Agora</title>
+			</Head>
 			<h1 className="font-bold mb-4">Post NFT</h1>
 			<div className="flex">
 				<div className="mb-6">

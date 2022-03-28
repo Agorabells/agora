@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 import Image from 'next/image';
+import Head from 'next/head';
 import style from '../styles/Feeds.module.css';
 import { withSession } from '../lib/server/withSession';
 import { explore } from '../lib/lens-api/explore-publications';
@@ -30,23 +31,17 @@ export default function Feeds({ publications }) {
 					<a href={`/profiles/${item.profile.id}/`}>
 						<div className="hover:text-accent-200 ease-in-out duration-150 font-semibold tracking-wide mr-2">
 							{item?.profile?.name ? item.profile.name : 'unknown'}
-							<span className="italic font-light ml-2">
-								({item?.profile?.handle}){' '}
-							</span>
+							<span className="italic font-light ml-2">({item?.profile?.handle}) </span>
 						</div>
 						<div>{item?.profile?.ownedBy}</div>
 					</a>
 				</div>
-				<h4 className="text-md leading-6 line-clamp-3 mb-6">
-					{item.metadata.content}
-				</h4>
+				<h4 className="text-md leading-6 line-clamp-3 mb-6">{item.metadata.content}</h4>
 				<span className={style.type}>{item.__typename}</span>
 				{/* <span className={style.created}>Created: {item.createdAt}</span> */}
 
 				<a href={`/post-nft/${item.id}/`}>
-					<span className={style.created}>
-						comments : {item.stats.totalAmountOfComments}
-					</span>
+					<span className={style.created}>comments : {item.stats.totalAmountOfComments}</span>
 				</a>
 			</div>
 		);
@@ -54,6 +49,9 @@ export default function Feeds({ publications }) {
 
 	return (
 		<div>
+			<Head>
+				<title>Feed Post - Agora</title>
+			</Head>
 			<h1 className="font-bold">Feed</h1>
 			<div className="grid grid-cols-2 gap-6">
 				{publications.map((item, ind) => (
@@ -68,9 +66,7 @@ export default function Feeds({ publications }) {
 export const getServerSideProps = withSession(async ({ req, res }) => {
 	const { explorePublications } = await explore(req);
 
-	const arr = explorePublications.items.filter(
-		(item) => item.__typename !== 'Comment',
-	);
+	const arr = explorePublications.items.filter((item) => item.__typename !== 'Comment');
 	return {
 		props: {
 			publications: arr,

@@ -1,4 +1,5 @@
 /* eslint-disable import/no-unresolved */
+import Head from 'next/head';
 import { withSession } from '../../lib/server/withSession';
 import { getProfiles } from '../../lib/lens-api/get-profiles';
 
@@ -19,6 +20,9 @@ export default function Profiles({ profile }) {
 	const { totalFollowers, totalFollowing, totalPosts, totalComments } = stats;
 	return (
 		<div>
+			<Head>
+				<title>{profile.handle}'s profile - Agora</title>
+			</Head>
 			<div>
 				<div className="flex items-start">
 					<div>

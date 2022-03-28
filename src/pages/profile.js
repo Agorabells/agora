@@ -1,4 +1,5 @@
 import Router from 'next/router';
+import Head from 'next/head';
 import { withSession } from '../lib/server/withSession';
 
 export default function Profile({ user }) {
@@ -12,6 +13,9 @@ export default function Profile({ user }) {
 	if (profile) {
 		return (
 			<div>
+				<Head>
+					<title>{profile?.handle} profile - Agora</title>
+				</Head>
 				<div>
 					<div className="flex items-start">
 						<div>

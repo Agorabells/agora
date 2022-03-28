@@ -42,6 +42,7 @@
 		"no-constant-condition": "off",
 		"react/jsx-no-constructed-context-values": "off",
 		"react/no-unescaped-entities": "off",
-		"operator-linebreak": "off"
+		"operator-linebreak": "off",
+		"max-len": "off"
 	}
 }
