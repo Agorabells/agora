@@ -38,6 +38,10 @@
 		"no-lonely-if": "off",
 		"import/prefer-default-export": "off",
 		"consistent-return": "off",
-		"react/jsx-no-constructed-context-values": "off"
+		"object-curly-newline": "off",
+		"no-constant-condition": "off",
+		"react/jsx-no-constructed-context-values": "off",
+		"react/no-unescaped-entities": "off",
+		"operator-linebreak": "off"
 	}
 }
