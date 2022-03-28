@@ -12,7 +12,9 @@ export default function UpdateProfile({ user }) {
 	const [website, setWebsite] = useState(profile?.website || '');
 	const [twitterUrl, setTwitterUrl] = useState(profile?.twitterUrl || '');
 	const [location, setLocation] = useState(profile?.location || '');
-	const [profilePictureUri, setProfilePictureUri] = useState(profile?.profilePictureUri || '');
+	const [profilePictureUri, setProfilePictureUri] = useState(
+		profile?.profilePictureUri || '',
+	);
 
 	const UpdateProfileInfo = async () => {
 		const profileInfo = {
@@ -36,15 +38,23 @@ export default function UpdateProfile({ user }) {
 
 	if (profile) {
 		return (
-			<div className="w-full max-w-s">
-				<form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-					<div className="block text-gray-700  font-bold mb-8">Profile Update</div>
+			<div className="w-full">
+				<form className="">
+					<div className="block text-gray-700  font-bold mb-8">Edit Profile</div>
 
-					<label className="block text-gray-700 text-sm font-bold mb-2">Address: {user?.address}</label>
-					<label className="block text-gray-700 text-sm font-bold mb-2">ID: {profile?.id} </label>
-					<label className="block text-gray-700 text-sm font-bold mb-2">Handle: {handle} </label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">
+						Address: {user?.address}
+					</label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">
+						ID: {profile?.id}{' '}
+					</label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">
+						Handle: {handle}{' '}
+					</label>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold ">Name: </label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">
+						Name:{' '}
+					</label>
 					<input
 						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
@@ -56,7 +66,7 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold ">Bio: </label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">Bio: </label>
 					<input
 						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
@@ -68,20 +78,9 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold ">Cover picture: </label>
-					<input
-						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
-						type="text"
-						disabled
-						id="coverPicture"
-						name="coverPicture"
-						value={coverPicture}
-						onChange={(e) => {
-							setCoverPicture(e.target.value ? e.target.value : '');
-						}}
-					/>
-					<br />
-					<label className="block text-gray-700 text-sm font-bold ">Location: </label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">
+						Location:{' '}
+					</label>
 					<input
 						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
@@ -93,7 +92,9 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold ">Twitter url: </label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">
+						Twitter url:{' '}
+					</label>
 					<input
 						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
 						type="text"
@@ -105,7 +106,9 @@ export default function UpdateProfile({ user }) {
 						}}
 					/>
 					<br />
-					<label className="block text-gray-700 text-sm font-bold ">Website: </label>
+					<label className="block text-gray-700 text-sm font-bold mb-2">
+						Website:{' '}
+					</label>
 					<input
 						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4
 "
@@ -117,28 +120,6 @@ export default function UpdateProfile({ user }) {
 							setWebsite(e.target.value ? e.target.value : '');
 						}}
 					/>
-					<br />
-					<br />
-					<img
-						src={
-							profile.profilePictureUri
-								? profile.profilePictureUri
-								: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png'
-						}
-						alt=""
-					/>
-					<label className="block text-gray-700 text-sm font-bold mb-2">Profile Image: </label>
-					<input
-						className="shadow appearance-none border rounded w-half py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
-						type="text"
-						id="profilePictureUri"
-						name="profilepicture"
-						value={profilePictureUri}
-						onChange={(e) => {
-							setProfilePictureUri(e.target.value ? e.target.value : '');
-						}}
-					/>
-					<br />
 					<br />
 					<button
 						className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

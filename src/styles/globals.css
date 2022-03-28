@@ -2,12 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--body-bg: #fff;
+
+	--color-main: #293652;
+	--color-main-50: #394760;
+	--color-main-100: #1c2845;
+	--color-main-200: #121b37;
+	--color-main-300: #0a122e;
+
+	--color-accent: #88e5f0;
+	--color-accent-50: #a2f5f7;
+	--color-accent-100: #62cfe6;
+	--color-accent-200: #47a6c5;
+	--color-accent-300: #317fa5;
+
+	--primary: #0c141d;
+	--primary-alt: #f1f5f9;
+	--secondary: #f2f4f8;
+	--secondary-alt: #899ebd;
+
+	--color-negative: #ff644c;
+}
+
 html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-		Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -23,4 +46,11 @@ a {
 	width: 1080px;
 	height: auto;
 	margin: 0 auto;
+}
+
+#__next {
+	background-color: var(--body-bg);
+	height: 100vh;
+	width: 100%;
+	overflow-y: auto;
 }

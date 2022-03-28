@@ -11,39 +11,52 @@ export default function Profile({ user }) {
 	};
 	if (profile) {
 		return (
-			<div className="container mx-auto my-5 p-5">
-				<div className="md:flex no-wrap md:-mx-2 ">
-					<div className="w-full md:w-5/12 md:mx-2">
-						<h3 className="block text-gray-700  font-bold mb-2">Profile Page</h3>
-						<div className="px-4 py-2 ">User profile authenticated and created via Lens protocol</div>
-						<div className="bg-white p-3 border-t-4 border-green-400">
-							<div className="image overflow-hidden">
-								<img
-									className="h-auto w-half mx-auto   hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center
-"
-									src={
-										profile.profilePictureUri
-											? profile.profilePictureUri
-											: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png'
-									}
-									alt=""
-								/>
+			<div>
+				<div>
+					<div className="flex items-start">
+						<div>
+							<h3 className="font-bold">Profile Page</h3>
+							<div className="font-light text-md mb-4">
+								User profile authenticated and created via Lens protocol
 							</div>
-							<h1 className="text-gray-900 font-bold text-xl leading-8 my-1">{user?.address}</h1>
-							<div className="text-gray-600 font-lg text-semibold leading-6">
-								<span className=" py-2 font-semibold"> ID :</span> {profile?.id}
+						</div>
+						<button
+							className="hover:text-accent-200 ease-in-out duration-150 font-bold px-2 py-1 rounded-md ml-auto"
+							onClick={(e) => {
+								e.preventDefault();
+
+								editProfile();
+							}}
+						>
+							Edit Profile
+						</button>
+					</div>
+					<div className="flex my-8">
+						<img
+							className="overflow-hidden rounded-full mr-4 w-20 h-20"
+							src={
+								profile.profilePictureUri
+									? profile.profilePictureUri
+									: 'https://storage.googleapis.com/opensea-static/opensea-profile/1.png'
+							}
+							alt="avatar"
+						/>
+						<div>
+							<h1 className="font-semibold tracking-wide">{user?.address}</h1>
+							<div>
+								<span>ID:</span> {profile?.id}
 							</div>
-							<div className="text-gray-600 font-lg text-semibold leading-6">
-								<span className=" py-2 font-semibold"> Handle :</span> {profile?.handle}
+							<div>
+								<span>Handle:</span> {profile?.handle}
 							</div>
 						</div>
 					</div>
 				</div>
-				<div className="bg-white p-3 shadow-sm rounded-sm">
-					<div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
-						<span clas="text-green-500">
+				<div className="w-1/3">
+					<div className="flex items-center font-semibold mb-2">
+						<span>
 							<svg
-								className="h-5"
+								className="h-4 mr-1"
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
 								viewBox="0 0 24 24"
@@ -57,46 +70,36 @@ export default function Profile({ user }) {
 								/>
 							</svg>
 						</span>
-						<span className="tracking-wide">About</span>
+						<span>About</span>
 					</div>
-					<div className="text-gray-700">
-						<div className="grid md:grid-cols-2 text-sm">
+					<div className="mb-6">
+						<div className="grid grid-cols-2">
 							<div className="grid grid-cols-2">
-								<div className="px-4 py-2 font-semibold">Name</div>
+								<div className="py-2 font-semibold">Name:</div>
 								<div className="px-4 py-2">{profile?.name}</div>
 							</div>
 							<div className="grid grid-cols-2">
-								<div className="px-4 py-2 font-semibold">twitter</div>
+								<div className="py-2 font-semibold">Twitter:</div>
 								<div className="px-4 py-2">
-									<a className="text-blue-800" href={profile?.twitterUrl}>
+									<a className="text-sky-600" href={profile?.twitterUrl}>
 										{profile?.twitterUrl}
 									</a>
 								</div>
 							</div>
 							<div className="grid grid-cols-2">
-								<div className="px-4 py-2 font-semibold">Location</div>
+								<div className="py-2 font-semibold">Location:</div>
 								<div className="px-4 py-2">{profile?.location}</div>
 							</div>
 							<div className="grid grid-cols-2">
-								<div className="px-4 py-2 font-semibold">Website</div>
+								<div className="py-2 font-semibold">Website:</div>
 								<div className="px-4 py-2">
-									<a className="text-blue-800" href={profile?.website}>
+									<a className="text-sky-600" href={profile?.website}>
 										{profile?.website}
 									</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<button
-						className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
-						onClick={(e) => {
-							e.preventDefault();
-
-							editProfile();
-						}}
-					>
-						Edit Profile
-					</button>
 				</div>
 			</div>
 		);
